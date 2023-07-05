@@ -5,6 +5,6 @@ interface IImageDetails {
   location?: string;
   description?: string;
 }
-export interface IGalleryImage extends IImage {
+export interface ISlideContent extends IImage {
   imageDetails?: IImageDetails;
 }
