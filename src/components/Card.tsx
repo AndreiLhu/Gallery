@@ -1,14 +1,15 @@
 import React from 'react';
-import Slide from './Slide';
 import { ISlideContent } from '../interfaces/GalleryImage';
 import { images } from '../data/items';
-import { Link } from 'react-router-dom';
 
-const Gallery: React.FC = () => {
+interface ISlideProps {
+  slideContent: ISlideContent;
+}
+
+const Card: React.FC<ISlideProps> = (props) => {
   const [isDialogOpen, setIsDialogOpen] = React.useState<boolean>(false);
   const [currentlySelectedImage, setCurrentlySelectedImage] =
     React.useState<ISlideContent>();
-
   const handleImageClick = React.useCallback(
     (selectedImage: ISlideContent) => {
       const currectlySelectedImage = images.filter(
@@ -20,26 +21,20 @@ const Gallery: React.FC = () => {
     [isDialogOpen]
   );
 
+  console.log(currentlySelectedImage);
+  const { slideContent } = props;
   return (
     <div>
-      {images.map((image, index) => {
-        return (
-          <Link to="/card" key={index}>
-            <img
-              src={image.imgUrl}
-              style={{ width: '200px' }}
-              onClick={() => handleImageClick(image)}
-            />
-          </Link>
-        );
-      })}
-      {isDialogOpen && (
-        <Slide
-          slideContent={currentlySelectedImage as ISlideContent}
-          isDialogOpen={isDialogOpen}
-        />
-      )}
+      <img
+        src={slideContent.imgUrl}
+        style={{ width: '200px' }}
+        onClick={() => handleImageClick(slideContent)}
+      />
+      <h2>{slideContent.imageDetails?.name}</h2>
+      <p>{slideContent.imageDetails?.description}</p>
+      <h4>{slideContent.imageDetails?.location}</h4>
     </div>
   );
 };
-export default Gallery;
+
+export default Card;
