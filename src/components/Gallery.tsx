@@ -21,13 +21,14 @@ const Gallery: React.FC = () => {
   );
 
   return (
-    <div>
+    <div className="mainDivGallery">
       {images.map((image, index) => {
         return (
           <Link to="/card" key={index}>
             <img
+              className="cardPhoto"
               src={image.imgUrl}
-              style={{ width: '200px' }}
+              style={{ width: '250px' }}
               onClick={() => handleImageClick(image)}
             />
           </Link>

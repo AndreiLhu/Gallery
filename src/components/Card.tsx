@@ -21,18 +21,21 @@ const Card: React.FC<ISlideProps> = (props) => {
     [isDialogOpen]
   );
 
-  console.log(currentlySelectedImage);
   const { slideContent } = props;
   return (
-    <div>
-      <img
-        src={slideContent.imgUrl}
-        style={{ width: '200px' }}
-        onClick={() => handleImageClick(slideContent)}
-      />
-      <h2>{slideContent.imageDetails?.name}</h2>
-      <p>{slideContent.imageDetails?.description}</p>
-      <h4>{slideContent.imageDetails?.location}</h4>
+    <div className="mainDivCard">
+      <div className="image-title-card">
+        <img
+          className="imageCard"
+          src={slideContent.imgUrl}
+          onClick={() => handleImageClick(slideContent)}
+        />
+        <h2 className="nameCard">{slideContent.imageDetails?.name}</h2>
+      </div>
+      <p className="descriptionCard">
+        {slideContent.imageDetails?.description}
+      </p>
+      <h4 className="locationCard">{slideContent.imageDetails?.location}</h4>
     </div>
   );
 };
