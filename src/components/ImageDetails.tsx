@@ -1,6 +1,7 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { IImage, images } from '../data/items';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { images } from "../data/items";
+import { IImage } from "../interfaces/Image";
 
 const ImageDetails: React.FC = () => {
   const [image, setImage] = React.useState<IImage>();
@@ -17,7 +18,7 @@ const ImageDetails: React.FC = () => {
   return (
     <React.Fragment>
       <h2>ImageDetails - {image.id} </h2>
-      <img src={image.imgUrl} style={{ maxWidth: '500px' }} />
+      <img src={image.imgUrl} style={{ maxWidth: "500px" }} />
       <p>{image.description}</p>
       <h4>{image.location}</h4>
     </React.Fragment>
