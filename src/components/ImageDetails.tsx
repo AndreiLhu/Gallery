@@ -16,10 +16,12 @@ const ImageDetails: React.FC = () => {
   }
   return (
     <React.Fragment>
-      <h2>ImageDetails - {image.id} </h2>
-      <img src={image.imgUrl} style={{ maxWidth: '500px' }} />
-      <p>{image.description}</p>
-      <h4>{image.location}</h4>
+      <div>
+        <h2>ImageDetails - {image.id} </h2>
+        <img src={image.imgUrl} style={{ maxWidth: '500px' }} />
+        <p>{image.description}</p>
+        <h4>{image.location}</h4>
+      </div>
     </React.Fragment>
   );
 };

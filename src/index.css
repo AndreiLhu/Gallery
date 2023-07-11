@@ -4,32 +4,37 @@
 }
 /* Gallery css*/
 
-.mainDivGallery {
-  display: grid;
-  gap: 1rem;
-
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-auto-rows: 240px;
+/* Card css*/
+.galleryTitle {
+  padding-left: 20px;
 }
-@media screen and (min-width: 600px) {
-  .cardPhoto {
-    grid-row: span 2 / auto;
+
+.mainGalleryDiv {
+  padding: 20px;
+  display: column;
+  column-count: 4;
+  gap: 20px;
+  pa
+}
+
+.column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+  .mainGalleryDiv {
+    column-count: 3;
   }
 }
-
-/* Card css*/
-
-.mainDivCard {
-  position: relative;
-  grid-column: 1/9;
-  grid-row-start: 1;
-  height: fit-content;
+@media screen and (max-width: 800px) {
+  .mainGalleryDiv {
+    column-count: 2;
+  }
 }
-.nameCard {
-}
-.descriptionCard {
-}
-.imageCard {
-}
-.image-title-card {
+@media screen and (max-width: 600px) {
+  .mainGalleryDiv {
+    column-count: 1;
+  }
 }
