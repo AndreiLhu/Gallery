@@ -4,15 +4,20 @@ import { images } from '../data/items';
 
 const Gallery: React.FC = () => {
   return (
-    <div>
-      {images.map((image, index) => {
-        return (
-          <Link to={`${image.id}`}>
-            <img src={image.imgUrl} key={index} style={{ maxWidth: '200px' }} />
-          </Link>
-        );
-      })}
-    </div>
+    <>
+      <h1 className="galleryTitle">Gallery</h1>
+      <div className="mainGalleryDiv">
+        {images.map((image, index) => {
+          return (
+            <div className="column" key={index}>
+              <Link to={`${image.id}`}>
+                <img src={image.imgUrl} />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 export default Gallery;
