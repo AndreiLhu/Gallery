@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { IImage, images } from '../data/items';
+import { images } from '../data/items';
+import { IImage } from '../interfaces/Image';
 
 const ImageDetails: React.FC = () => {
   const [image, setImage] = React.useState<IImage>();
