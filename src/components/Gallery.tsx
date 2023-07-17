@@ -5,7 +5,6 @@ import { images } from '../data/items';
 const Gallery: React.FC = () => {
   return (
     <>
-      <h1 className="galleryTitle">Gallery</h1>
       <div className="mainGalleryDiv">
         {images.map((image, index) => {
           return (

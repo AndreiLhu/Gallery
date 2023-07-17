@@ -16,11 +16,11 @@ const ImageDetails: React.FC = () => {
   }
   return (
     <React.Fragment>
-      <div>
-        <h2>ImageDetails - {image.id} </h2>
-        <img src={image.imgUrl} style={{ maxWidth: '500px' }} />
-        <p>{image.description}</p>
-        <h4>{image.location}</h4>
+      <span className="spanCard"></span>
+      <div className="mainCardDiv">
+        <img src={image.imgUrl} className="cardImage" />
+        <h4 className="locationCard">{image.location}</h4>
+        <p className="cardDescription">{image.description}</p>
       </div>
     </React.Fragment>
   );

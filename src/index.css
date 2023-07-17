@@ -37,3 +37,38 @@
     column-count: 1;
   }
 }
+
+/*///////////////////// */
+
+.mainCardDiv {
+  display: flex;
+
+  padding-top: 5rem;
+}
+.cardImage {
+  object-fit: cover;
+  max-width: 50%;
+  max-height: 50%;
+  margin-left: 2rem;
+}
+
+.cardDescription {
+  max-width: 30rem;
+  text-align: left;
+  padding-top: 10rem;
+  margin-left: 2rem;
+}
+.locationCard {
+  background-color: aqua;
+  position: absolute;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.mainTitle {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(195, 195, 195);
+  margin: 2rem;
+}
