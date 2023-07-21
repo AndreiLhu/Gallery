@@ -19,8 +19,9 @@ const ImageDetails: React.FC = () => {
     <React.Fragment>
       <div className="mainCardDiv">
         <img src={image.imgUrl} className="cardImage" />
-        {/* <p>{image.name}</p> */}
-        <h4 className="locationCard">{image.location}</h4>
+        <h2 className="nameCard">
+          {image.name} <p className="locationCard">{image.location}</p>
+        </h2>
         <p className="cardDescription">{image.description}</p>
       </div>
     </React.Fragment>

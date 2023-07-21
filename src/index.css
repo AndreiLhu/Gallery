@@ -48,8 +48,8 @@
 
 .mainCardDiv {
   display: flex;
-
   padding-top: 5rem;
+  justify-content: space-between;
 }
 .cardImage {
   object-fit: cover;
@@ -59,21 +59,31 @@
 }
 
 .cardDescription {
-  max-width: 30rem;
+  max-width: 25rem;
   text-align: left;
   padding-top: 10rem;
-  margin-left: 2rem;
+  margin-right: 5rem;
+  color: gray;
 }
-.locationCard {
-  background-color: aqua;
-  padding-left: 4em;
-  padding-right: 4em;
+.nameCard {
+  background-color: rgb(255, 255, 255);
+  padding-left: 3em;
+  padding-right: 3em;
   padding-top: 2em;
   padding-bottom: 2em;
   text-align: center;
-  position: relative;
+  align-items: center;
+  position: absolute;
   width: 10%;
   margin: auto;
+  left: 45%;
+  font-weight: 700;
+}
+.locationCard {
+  font-size: small;
+  color: gray;
+  margin-top: 2rem;
+  font-weight: 400;
 }
 
 .mainTitle {
