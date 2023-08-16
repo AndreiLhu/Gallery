@@ -22,6 +22,8 @@ const ImageDetails: React.FC = () => {
         <h2 className="nameCard">
           {image.name} <p className="locationCard">{image.location}</p>
         </h2>
+
+        <p className="numberBackground">{image.number}</p>
         <p className="cardDescription">{image.description}</p>
       </div>
     </React.Fragment>

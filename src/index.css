@@ -56,21 +56,15 @@
   max-width: 50%;
   max-height: 50%;
   margin-left: 2rem;
+  padding-right: 5rem;
 }
 
-.cardDescription {
-  max-width: 25rem;
-  text-align: left;
-  padding-top: 10rem;
-  margin-right: 5rem;
-  color: gray;
-}
 .nameCard {
   background-color: rgb(255, 255, 255);
-  padding-left: 3em;
-  padding-right: 3em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   text-align: center;
   align-items: center;
   position: absolute;
@@ -79,6 +73,7 @@
   left: 45%;
   font-weight: 700;
 }
+
 .locationCard {
   font-size: small;
   color: gray;
@@ -90,6 +85,26 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(195, 195, 195);
   margin: 2rem;
+}
+
+.cardDescription {
+  max-width: 25rem;
+  text-align: left;
+  padding-top: 10rem;
+  margin-right: 5rem;
+  color: gray;
+  padding-left: 5rem;
+  position: absolute;
+  right: 0;
+}
+
+.numberBackground {
+  text-align: center;
+  right: 0;
+  margin-right: 5rem;
+  font-size: 12em;
+  color: rgb(234, 234, 234);
+  font-weight: 800;
 }
 
 /* //////////////////////////// */

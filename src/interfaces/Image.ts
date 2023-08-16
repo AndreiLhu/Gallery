@@ -4,4 +4,5 @@ export interface IImage {
   location: string;
   description: string;
   imgUrl: string;
+  number: number;
 }
