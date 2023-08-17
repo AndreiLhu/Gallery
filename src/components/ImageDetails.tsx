@@ -19,12 +19,22 @@ const ImageDetails: React.FC = () => {
     <React.Fragment>
       <div className="mainCardDiv">
         <img src={image.imgUrl} className="cardImage" />
-        <h2 className="nameCard">
-          {image.name} <p className="locationCard">{image.location}</p>
-        </h2>
+        <div className="titleContainer">
+          <h2 className="nameCard">{image.name}</h2>
+          <p className="locationCard">{image.location}</p>
+        </div>
 
         <p className="numberBackground">{image.number}</p>
-        <p className="cardDescription">{image.description}</p>
+        <div className="sorurceDescriptionContainer">
+          <p className="cardDescription">{image.description}</p>
+          <a
+            href="https://www.google.de/"
+            className="sourceLink"
+            target="blank"
+          >
+            go to source
+          </a>
+        </div>
       </div>
     </React.Fragment>
   );

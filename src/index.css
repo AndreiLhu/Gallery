@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
 }
+@media screen and (max-width: 1475px) {
+  body {
+    padding: 0 30px;
+  }
+}
+
 /* Gallery css*/
 
 .textGalleryImage {
@@ -13,7 +19,6 @@
 }
 
 .mainGalleryDiv {
-  padding: 2rem;
   display: column;
   column-count: 4;
   gap: 20px;
@@ -47,38 +52,58 @@
 /*///////////////////// */
 
 .mainCardDiv {
-  display: flex;
+  /* display: flex;
   padding-top: 5rem;
-  justify-content: space-between;
+  justify-content: space-between; */
+
+  min-height: 72vh;
+  padding: 50px 0px;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: 1fr;
+  position: relative;
 }
 .cardImage {
-  object-fit: cover;
-  max-width: 50%;
-  max-height: 50%;
-  margin-left: 2rem;
-  padding-right: 5rem;
+  position: absolute;
+  inset: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 0px;
+  height: 0px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  filter: none;
+  background-size: cover;
+  background-image: none;
+  position: relative;
+  grid-column: 1/9;
+  grid-row-start: 1;
+  height: fit-content;
 }
 
 .nameCard {
-  background-color: rgb(255, 255, 255);
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  width: 10%;
-  margin: auto;
-  left: 45%;
-  font-weight: 700;
+  padding-bottom: 30px;
 }
-
+.titleContainer {
+  background-color: white;
+  margin-top: -1px;
+  padding-left: 50px;
+  grid-column: 8/15;
+  grid-row-start: 1;
+  width: fit-content;
+  min-height: 0;
+  min-width: 0;
+  height: max-content;
+  z-index: 3;
+}
 .locationCard {
-  font-size: small;
-  color: gray;
-  margin-top: 2rem;
-  font-weight: 400;
+  padding-bottom: 50px;
+  color: #7d7d7d;
 }
 
 .mainTitle {
@@ -88,23 +113,125 @@
 }
 
 .cardDescription {
-  max-width: 25rem;
-  text-align: left;
-  padding-top: 10rem;
-  margin-right: 5rem;
-  color: gray;
-  padding-left: 5rem;
-  position: absolute;
-  right: 0;
+  position: relative;
+  grid-column: 17/25;
+  grid-row-start: 1;
+  height: fit-content;
+  margin-top: 13rem;
+  color: #7d7d7d;
+  width: 85%;
 }
 
 .numberBackground {
-  text-align: center;
-  right: 0;
-  margin-right: 5rem;
-  font-size: 12em;
-  color: rgb(234, 234, 234);
-  font-weight: 800;
+  font-size: 20rem;
+  font-family: 'Libre Baskerville', serif;
+  color: #f3f3f3;
+  font-weight: 700;
+  line-height: 150px;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50px;
+  right: 0%;
+}
+.sorurceDescriptionContainer {
+  position: relative;
+  grid-column: 17/25;
+  grid-row-start: 1;
+  height: fit-content;
+}
+
+@media screen and (max-width: 1280px) {
+  .sorurceDescriptionContainer {
+    grid-column: 16/25;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sorurceDescriptionContainer {
+    grid-column: 15/25;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .mainCardDiv {
+    grid-template-columns: repeat(24, 1fr);
+  }
+  .cardImage {
+    grid-column: 3/16;
+  }
+  .cardDescription {
+    margin-top: 13rem;
+    width: 100%;
+  }
+  .numberBackground {
+    display: unset;
+    right: unset;
+    grid-row-start: 2;
+    grid-column-start: 4;
+    margin-top: 2rem;
+  }
+  .titleContainer {
+    grid-column: 11 /24;
+  }
+  .sorurceDescriptionContainer {
+    grid-column: 6/20;
+    grid-row-start: 2;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .cardImage {
+    grid-column: 1/16;
+  }
+  .cardDescription {
+    margin-top: 13rem;
+    width: 100%;
+  }
+  .numberBackground {
+    display: unset;
+    right: unset;
+    grid-row-start: 2;
+    grid-column-start: 4;
+    margin-top: 2rem;
+  }
+  .titleContainer {
+    grid-column: 9 /24;
+  }
+  .sorurceDescriptionContainer {
+    grid-column: 6/20;
+    grid-row-start: 2;
+  }
+}
+@media screen and (max-width: 760px) {
+  .cardImage {
+    grid-column: 1/25;
+  }
+  .cardDescription {
+    margin-top: 14rem;
+    width: 100%;
+  }
+  .numberBackground {
+    position: unset;
+    font-size: 100px;
+    grid-column-start: 1;
+    grid-column-end: 25;
+    justify-self: end;
+    line-height: 100px;
+    margin-top: 7rem;
+  }
+  .titleContainer {
+    grid-column: 1 /22;
+    grid-row-start: 2;
+    width: 100%;
+    margin-left: -1px;
+    margin-top: -90px;
+    padding: 20px;
+  }
+  .sorurceDescriptionContainer {
+    grid-column: 1/25;
+    grid-row-start: 2;
+  }
 }
 
 /* //////////////////////////// */
