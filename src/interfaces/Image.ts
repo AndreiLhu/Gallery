@@ -1,5 +1,5 @@
 export interface IImage {
-  id: string;
+  id: number;
   name: string;
   location: string;
   description: string;

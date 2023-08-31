@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { images } from '../data/items';
-import Slide from './Slide';
+import Image from './Image';
 
 const Gallery: React.FC = () => {
   return (
     <>
       <div className="mainGalleryDiv">
         {images.map((i) => {
-          return <Slide image={i} />;
+          return <Image image={i} />;
         })}
       </div>
     </>

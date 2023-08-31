@@ -2,7 +2,7 @@ import { IImage } from '../interfaces/Image';
 
 export const images: IImage[] = [
   {
-    id: '1',
+    id: 1,
     name: 'London Cityscape ',
     location: ' London, England ',
     description:
@@ -11,7 +11,7 @@ export const images: IImage[] = [
     number: 2021,
   },
   {
-    id: '2',
+    id: 2,
     name: 'Germany Castle ',
     location: ' Cochem, Germany ',
     description:
@@ -21,7 +21,7 @@ export const images: IImage[] = [
   },
 
   {
-    id: '3',
+    id: 3,
     name: ' Berlin Tower ',
     location: ' Berlin, Germany',
     description:
@@ -31,7 +31,7 @@ export const images: IImage[] = [
   },
 
   {
-    id: '4',
+    id: 4,
     name: ' Island',
     location: ' Santorini, Greece ',
     description:
@@ -40,7 +40,7 @@ export const images: IImage[] = [
     number: 2017,
   },
   {
-    id: '5',
+    id: 5,
     name: ' Norway lights',
     location: ' Norway ',
     description:
@@ -50,7 +50,7 @@ export const images: IImage[] = [
   },
 
   {
-    id: '6',
+    id: 6,
     name: ' Beautifull Switzerland',
     location: ' Sachseln, Switzerland ',
     description:
@@ -60,7 +60,7 @@ export const images: IImage[] = [
   },
 
   {
-    id: '7',
+    id: 7,
     name: ' Mountain ',
     location: ' Alps, Switzerland ',
     description:
@@ -69,7 +69,7 @@ export const images: IImage[] = [
     number: 2019,
   },
   {
-    id: '8',
+    id: 8,
     name: ' Liguria coast ',
     location: 'Liguria, Italy',
     description:
@@ -79,7 +79,7 @@ export const images: IImage[] = [
   },
 
   {
-    id: '9',
+    id: 9,
     name: ' France coast',
     location: 'Étretat, France ',
     description:
@@ -89,7 +89,7 @@ export const images: IImage[] = [
   },
 
   {
-    id: '10',
+    id: 10,
     name: ' Dublin ',
     location: ' Dublin, Ireland ',
     description:
