@@ -32,7 +32,7 @@ const ImageDetails: React.FC = () => {
             className="sourceLink"
             target="blank"
           >
-            go to source
+            GO TO SOURCE
           </a>
         </div>
       </div>

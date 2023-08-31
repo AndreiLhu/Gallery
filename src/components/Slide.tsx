@@ -1,22 +1,28 @@
 import React from 'react';
-import { ISlideContent } from '../interfaces/GalleryImage';
+
+import { Link } from 'react-router-dom';
+import { IImage } from '../interfaces/Image';
 
 interface ISlideProps {
-  slideContent: ISlideContent;
-  isDialogOpen: boolean;
+  image: IImage;
 }
 
 const Slide: React.FC<ISlideProps> = (props) => {
-  const { slideContent, isDialogOpen } = props;
+  const { image } = props;
 
   return (
-    <>
-      <dialog open={isDialogOpen}>
-        <h2>{slideContent.imageDetails?.name}</h2>
-        <p>{slideContent.imageDetails?.description}</p>
-        <h4>{slideContent.imageDetails?.location}</h4>
-      </dialog>
-    </>
+    <div className="column" key={image.id}>
+      <Link to={`${image.id}`}>
+        <div className="mainContainerGalleryImage">
+          <img src={image.imgUrl} />
+          <div className="textGalleryImage">
+            <h2 className="nameGalleryImage">{image.name}</h2>
+
+            <p className="locationGalleryImage"> {image.location}</p>
+          </div>
+        </div>
+      </Link>
+    </div>
   );
 };
 

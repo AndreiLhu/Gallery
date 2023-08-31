@@ -9,14 +9,20 @@
 }
 
 /* Gallery css*/
+.mainContainerGalleryImage {
+  position: relative;
+}
 
 .textGalleryImage {
   position: absolute;
-  color: aliceblue;
-  font-size: 1.3em;
-  display: block;
-  margin-inline-start: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  bottom: 25px;
+  left: 10px;
+  background-color: hsla(0, 0%, 96%, 0.25);
+  padding: 8px 10px;
 }
+
 .galleryTitle {
   padding-left: 20px;
 }
@@ -63,7 +69,6 @@
   position: relative;
 }
 .cardImage {
-  position: absolute;
   inset: 0px;
   box-sizing: border-box;
   padding: 0px;
@@ -78,11 +83,9 @@
   max-height: 100%;
   filter: none;
   background-size: cover;
-  background-image: none;
   position: relative;
   grid-column: 1/9;
   grid-row-start: 1;
-  height: fit-content;
 }
 
 .nameCard {
@@ -90,7 +93,7 @@
 }
 .titleContainer {
   background-color: white;
-  margin-top: -1px;
+  padding-right: 50px;
   padding-left: 50px;
   grid-column: 8/15;
   grid-row-start: 1;
@@ -119,6 +122,7 @@
   margin-top: 13rem;
   color: #7d7d7d;
   width: 85%;
+  margin-bottom: 5rem;
 }
 
 .numberBackground {
@@ -133,6 +137,11 @@
   top: 50px;
   right: 0%;
 }
+
+.sourceLink {
+  color: #7d7d7d;
+}
+
 .sorurceDescriptionContainer {
   position: relative;
   grid-column: 17/25;
