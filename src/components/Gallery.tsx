@@ -7,8 +7,8 @@ const Gallery: React.FC = () => {
   return (
     <>
       <div className="mainGalleryDiv">
-        {images.map((i) => {
-          return <Image image={i} />;
+        {images.map((i, id) => {
+          return <Image image={i} key={id} />;
         })}
       </div>
     </>
