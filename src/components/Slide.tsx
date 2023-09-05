@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { images } from '../data/items';
 import { IImage } from '../interfaces/Image';
-import backward from '../assets/backward.svg';
-import forward from '../assets/forward.svg';
+import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
 
 const Slide: React.FC = () => {
   const { id } = useParams();
@@ -26,6 +25,10 @@ const Slide: React.FC = () => {
     nextSlide = targetObj >= 10 ? 1 : targetObj + 1;
     previousSlide = targetObj > 1 ? targetObj - 1 : null;
   }
+
+  const getProgressBar = (currentlySelectedId: number) => {
+    return parseInt(`${currentlySelectedId}0`);
+  };
 
   React.useEffect(() => {
     const matchingImage = images.find(
@@ -102,13 +105,13 @@ const Slide: React.FC = () => {
       </div>
       <div className="slideControls">
         <Link onClick={handleBackClick} to={`/${previousSlide}`}>
-          <button disabled={isBackButtonDisabled} className="backwardButton">
-            <img src={backward} alt="backward" />
+          <button disabled={isBackButtonDisabled} className="footerButton">
+            <AiFillStepBackward className="backwardIcon" />
           </button>
         </Link>
         <Link to={`/${nextSlide}`} onClick={handleForwardClick}>
-          <button disabled={isForwardButtonDisabled} className="forwardButton">
-            <img src={forward} alt="forward" />
+          <button disabled={isForwardButtonDisabled} className="footerButton">
+            <AiFillStepForward className="forwardIcon" />
           </button>
         </Link>
       </div>

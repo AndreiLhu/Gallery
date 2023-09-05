@@ -149,7 +149,30 @@
   height: fit-content;
 }
 .slideControls {
-  display: inline;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+}
+
+.footerButton {
+  border: none;
+  background-color: #ffffff;
+  font-size: 30px;
+}
+.backwardButton {
+  border: none;
+  background-color: #ffffff;
+}
+.forwardButton {
+  border: none;
+  background-color: #ffffff;
+}
+.forwardIcon {
+  margin-left: 5px;
+}
+.backwardIcon {
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 1280px) {
