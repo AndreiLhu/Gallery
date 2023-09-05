@@ -149,11 +149,7 @@
   height: fit-content;
 }
 .slideControls {
-}
-
-.slideButton {
-  margin: 70px;
-  background-color: antiquewhite;
+  display: inline;
 }
 
 @media screen and (max-width: 1280px) {

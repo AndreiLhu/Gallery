@@ -2,23 +2,27 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { images } from '../data/items';
 import { IImage } from '../interfaces/Image';
+import backward from '../assets/backward.svg';
+import forward from '../assets/forward.svg';
 
 const Slide: React.FC = () => {
   const { id } = useParams();
+  const [isForwardButtonDisabled, setIsForwardButtonDisabled] =
+    React.useState<boolean>(false);
+  const [isBackButtonDisabled, setIsBackButtonDisabled] =
+    React.useState<boolean>(false);
   const [image, setImage] = React.useState<IImage>();
   const [currentlySelectedId, setCurrentlySelectedId] = React.useState<number>(
     parseInt(id as string)
   );
 
-  const isReady = () => {
-    return images.length > 0;
-  };
+  const isReady: boolean = images.length > 0;
 
   let nextSlide = null;
   let previousSlide = null;
   const targetObj = currentlySelectedId;
 
-  if (isReady()) {
+  if (isReady) {
     nextSlide = targetObj >= 10 ? 1 : targetObj + 1;
     previousSlide = targetObj > 1 ? targetObj - 1 : null;
   }
@@ -31,19 +35,41 @@ const Slide: React.FC = () => {
   }, [id]);
 
   const handleBackClick = React.useCallback(() => {
-    setCurrentlySelectedId(currentlySelectedId - 1);
+    const updatedSelectedId = currentlySelectedId - 1;
+    setCurrentlySelectedId(updatedSelectedId);
     const matchingImage = images.find(
       (image) => image.id === currentlySelectedId
     );
+    if (updatedSelectedId === 1) {
+      setIsBackButtonDisabled(true);
+    } else {
+      setIsBackButtonDisabled(false);
+      if (isForwardButtonDisabled) {
+        setIsForwardButtonDisabled(false);
+      }
+    }
     setImage(matchingImage);
-  }, [currentlySelectedId]);
+  }, [currentlySelectedId, isForwardButtonDisabled]);
+
   const handleForwardClick = React.useCallback(() => {
-    setCurrentlySelectedId(currentlySelectedId + 1);
+    const updatedSelectedId = currentlySelectedId + 1;
+    setCurrentlySelectedId(updatedSelectedId);
     const matchingImage = images.find(
       (image) => image.id === currentlySelectedId
     );
+    console.log('interior', currentlySelectedId);
+
     setImage(matchingImage);
-  }, [currentlySelectedId]);
+
+    if (updatedSelectedId === 10) {
+      setIsForwardButtonDisabled(true);
+    } else {
+      setIsForwardButtonDisabled(false);
+      if (isBackButtonDisabled) {
+        setIsBackButtonDisabled(false);
+      }
+    }
+  }, [currentlySelectedId, isBackButtonDisabled]);
 
   if (image == null) {
     return null;
@@ -51,7 +77,7 @@ const Slide: React.FC = () => {
 
   console.log(currentlySelectedId);
 
-  return !isReady() ? (
+  return !isReady ? (
     <div>Loading</div>
   ) : (
     <React.Fragment>
@@ -76,10 +102,14 @@ const Slide: React.FC = () => {
       </div>
       <div className="slideControls">
         <Link onClick={handleBackClick} to={`/${previousSlide}`}>
-          <span className="slideButton">Go Back</span>
+          <button disabled={isBackButtonDisabled} className="backwardButton">
+            <img src={backward} alt="backward" />
+          </button>
         </Link>
         <Link to={`/${nextSlide}`} onClick={handleForwardClick}>
-          <span className="slideButton">Go forward</span>
+          <button disabled={isForwardButtonDisabled} className="forwardButton">
+            <img src={forward} alt="forward" />
+          </button>
         </Link>
       </div>
     </React.Fragment>
