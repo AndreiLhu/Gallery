@@ -10,10 +10,23 @@ const Slide: React.FC = () => {
     React.useState<boolean>(false);
   const [isBackButtonDisabled, setIsBackButtonDisabled] =
     React.useState<boolean>(false);
+  const [progressBarWidth, setProgressBarWidth] = React.useState<string>('30%');
   const [image, setImage] = React.useState<IImage>();
   const [currentlySelectedId, setCurrentlySelectedId] = React.useState<number>(
     parseInt(id as string)
   );
+
+  const getProgressBar = React.useCallback(
+    (currentlySelectedId: number): string => {
+      return `${currentlySelectedId}0%`;
+    },
+    []
+  );
+
+  React.useEffect(() => {
+    const progressValue = getProgressBar(currentlySelectedId);
+    setProgressBarWidth(progressValue);
+  }, [currentlySelectedId, getProgressBar]);
 
   const isReady: boolean = images.length > 0;
 
@@ -26,9 +39,7 @@ const Slide: React.FC = () => {
     previousSlide = targetObj > 1 ? targetObj - 1 : null;
   }
 
-  const getProgressBar = (currentlySelectedId: number) => {
-    return parseInt(`${currentlySelectedId}0`);
-  };
+  console.log(getProgressBar);
 
   React.useEffect(() => {
     const matchingImage = images.find(
@@ -79,6 +90,7 @@ const Slide: React.FC = () => {
   }
 
   console.log(currentlySelectedId);
+  console.log(progressBarWidth);
 
   return !isReady ? (
     <div>Loading</div>
@@ -103,6 +115,10 @@ const Slide: React.FC = () => {
           </a>
         </div>
       </div>
+      <div
+        className="progressBar"
+        style={{ borderBottom: '2px solid gray', width: progressBarWidth }}
+      ></div>
       <div className="slideControls">
         <Link onClick={handleBackClick} to={`/${previousSlide}`}>
           <button disabled={isBackButtonDisabled} className="footerButton">
