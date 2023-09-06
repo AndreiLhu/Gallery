@@ -39,8 +39,6 @@ const Slide: React.FC = () => {
     previousSlide = targetObj > 1 ? targetObj - 1 : null;
   }
 
-  console.log(getProgressBar);
-
   React.useEffect(() => {
     const matchingImage = images.find(
       (image) => image.id === parseInt(id as string)
@@ -71,7 +69,6 @@ const Slide: React.FC = () => {
     const matchingImage = images.find(
       (image) => image.id === currentlySelectedId
     );
-    console.log('interior', currentlySelectedId);
 
     setImage(matchingImage);
 
@@ -88,9 +85,6 @@ const Slide: React.FC = () => {
   if (image == null) {
     return null;
   }
-
-  console.log(currentlySelectedId);
-  console.log(progressBarWidth);
 
   return !isReady ? (
     <div>Loading</div>

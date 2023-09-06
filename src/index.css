@@ -132,7 +132,7 @@
 }
 
 .numberBackground {
-  font-size: 20rem;
+  font-size: 15rem;
   font-family: 'Libre Baskerville', serif;
   color: #f3f3f3;
   font-weight: 700;
@@ -182,6 +182,14 @@
 }
 .progressBar {
   margin-bottom: 20px;
+}
+@media screen and (max-width: 1480px) {
+  .sorurceDescriptionContainer {
+    grid-column: 16/25;
+  }
+  .cardImage {
+    grid-column: 1/11;
+  }
 }
 
 @media screen and (max-width: 1280px) {
