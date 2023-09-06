@@ -3,13 +3,16 @@ import { Link, useParams } from 'react-router-dom';
 import { images } from '../data/items';
 import { IImage } from '../interfaces/Image';
 import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
+import Modal from './Modal';
 
 const Slide: React.FC = () => {
   const { id } = useParams();
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   const [isForwardButtonDisabled, setIsForwardButtonDisabled] =
     React.useState<boolean>(false);
   const [isBackButtonDisabled, setIsBackButtonDisabled] =
     React.useState<boolean>(false);
+
   const [progressBarWidth, setProgressBarWidth] = React.useState<string>('30%');
   const [image, setImage] = React.useState<IImage>();
   const [currentlySelectedId, setCurrentlySelectedId] = React.useState<number>(
@@ -82,6 +85,14 @@ const Slide: React.FC = () => {
     }
   }, [currentlySelectedId, isBackButtonDisabled]);
 
+  const handleModalOpen = React.useCallback(() => {
+    setIsModalOpen(!isModalOpen);
+  }, [isModalOpen]);
+
+  const handleModalClose = React.useCallback(() => {
+    setIsModalOpen(!isModalOpen);
+  }, [isModalOpen]);
+
   if (image == null) {
     return null;
   }
@@ -128,6 +139,10 @@ const Slide: React.FC = () => {
           </button>
         </Link>
       </div>
+      <button onClick={handleModalOpen}>Open</button>
+      {isModalOpen && (
+        <Modal imageSource={image.imgUrl} handleModalClose={handleModalClose} />
+      )}
     </React.Fragment>
   );
 };
