@@ -108,10 +108,14 @@
   color: #7d7d7d;
 }
 
-.mainTitle {
-  padding-bottom: 1rem;
+.mainLogo {
+  margin: 1rem;
+  padding-top: 1rem;
+  width: 9%;
+}
+.headerBorder {
   border-bottom: 1px solid rgb(195, 195, 195);
-  margin: 2rem;
+  margin-bottom: 3rem;
 }
 
 .cardDescription {

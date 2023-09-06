@@ -117,7 +117,10 @@ const Slide: React.FC = () => {
       </div>
       <div
         className="progressBar"
-        style={{ borderBottom: '2px solid gray', width: progressBarWidth }}
+        style={{
+          borderBottom: '2px solid rgb(195, 195, 195)',
+          width: progressBarWidth,
+        }}
       ></div>
       <div className="slideControls">
         <Link onClick={handleBackClick} to={`/${previousSlide}`}>
