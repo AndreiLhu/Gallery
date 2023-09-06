@@ -86,6 +86,8 @@
   position: relative;
   grid-column: 1/9;
   grid-row-start: 1;
+  width: auto;
+  height: auto;
 }
 
 .nameCard {
@@ -111,7 +113,7 @@
 .mainLogo {
   margin: 1rem;
   padding-top: 1rem;
-  width: 9%;
+  width: 110px;
 }
 .headerBorder {
   border-bottom: 1px solid rgb(195, 195, 195);
