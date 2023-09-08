@@ -107,14 +107,17 @@ const Slide: React.FC = () => {
     <React.Fragment>
       <div className="mainCardDiv">
         <img src={image.imgUrl} className="cardImage" />
-        <button onClick={handleModalOpen} className="openButton">
-          <AiOutlineFullscreen className="openIcon" />
-          SEE IMAGE
-        </button>
 
         <div className="titleContainer">
           <h2 className="nameCard">{image.name}</h2>
-          <p className="locationCard">{image.location}</p>
+          <p className="locationCard">{image.location} </p>
+          <button onClick={handleModalOpen} className="openButton">
+            <AiOutlineFullscreen
+              className="openIcon"
+              onClick={handleModalOpen}
+            />
+            SEE IMAGE
+          </button>
         </div>
 
         <p className="numberBackground">{image.number}</p>
