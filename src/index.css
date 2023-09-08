@@ -75,8 +75,6 @@
   border: none;
   margin: auto;
   display: block;
-  width: 0px;
-  height: 0px;
   min-width: 100%;
   max-width: 100%;
   min-height: 100%;
@@ -274,7 +272,7 @@
   .titleContainer {
     grid-column: 1 /22;
     grid-row-start: 2;
-    width: 100%;
+
     margin-left: -1px;
     margin-top: -90px;
     padding: 20px;
@@ -286,3 +284,32 @@
 }
 
 /* //////////////////////////// */
+
+.modalImage {
+  margin: auto;
+  display: block;
+  max-width: 70%;
+  max-height: 800px;
+}
+.modalDiv {
+  position: fixed;
+  z-index: 100;
+  padding-top: 20px;
+  padding-bottom: 120px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-height: 100%;
+  background-color: rgba(0, 0, 0, 0.94);
+}
+
+/* ////////////////////////////////// */
+.openIcon {
+}
+.openButton {
+  border: none;
+  background-color: #ffffff;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}

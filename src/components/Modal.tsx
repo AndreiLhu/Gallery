@@ -8,7 +8,7 @@ const Modal: React.FC<IModalProps> = (props) => {
   return (
     <div>
       <button onClick={handleModalClose}>Close</button>
-      <img src={imageSource} alt="image" />
+      <img src={imageSource} alt="image" className="modalImage" />
     </div>
   );
 };

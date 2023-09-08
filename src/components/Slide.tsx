@@ -2,7 +2,11 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { images } from '../data/items';
 import { IImage } from '../interfaces/Image';
-import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai';
+import {
+  AiFillStepBackward,
+  AiFillStepForward,
+  AiOutlineFullscreen,
+} from 'react-icons/ai';
 import Modal from './Modal';
 
 const Slide: React.FC = () => {
@@ -103,6 +107,11 @@ const Slide: React.FC = () => {
     <React.Fragment>
       <div className="mainCardDiv">
         <img src={image.imgUrl} className="cardImage" />
+        <button onClick={handleModalOpen} className="openButton">
+          <AiOutlineFullscreen className="openIcon" />
+          SEE IMAGE
+        </button>
+
         <div className="titleContainer">
           <h2 className="nameCard">{image.name}</h2>
           <p className="locationCard">{image.location}</p>
@@ -139,9 +148,14 @@ const Slide: React.FC = () => {
           </button>
         </Link>
       </div>
-      <button onClick={handleModalOpen}>Open</button>
+
       {isModalOpen && (
-        <Modal imageSource={image.imgUrl} handleModalClose={handleModalClose} />
+        <div className="modalDiv">
+          <Modal
+            imageSource={image.imgUrl}
+            handleModalClose={handleModalClose}
+          />
+        </div>
       )}
     </React.Fragment>
   );
