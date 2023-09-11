@@ -2,10 +2,9 @@
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 1775px) {
-  body {
-    padding: 0 30px;
-  }
+
+body {
+  padding: 0 30px;
 }
 
 /* Gallery css*/
@@ -310,7 +309,7 @@
     height: auto;
   }
 }
-@media screen and (min-width: 900px) and (max-width: 1900px) {
+@media screen and (min-width: 900px) {
   .modalImage {
     margin: auto;
     display: block;
